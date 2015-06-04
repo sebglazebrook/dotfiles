@@ -17,11 +17,20 @@ fi
 ln -sf ${HOME_DIR}/.dotfiles/bash_aliases ${HOME_DIR}/.bash_aliases
 ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
 ln -sf ${HOME_DIR}/.dotfiles/gitignore_global ${HOME_DIR}/.gitignore_global
+ln -sf ${HOME_DIR}/.dotfiles/inputrc ${HOME_DIR}/.inputrc
+ln -sf ${HOME_DIR}/.dotfiles/bash_env ${HOME_DIR}/.bash_env
+
+cat ${HOME_DIR}/.bash_profile | grep "bash_env" &> /dev/null
+if [ "$?" != 0 ]
+  then
+    printf "\nif [ -f ${HOME_DIR}/.bash_env ]; then\n  . ${HOME_DIR}/.bash_env\nfi\n" >> ${HOME_DIR}/.bash_profile
+fi
+
 
 cat ${HOME_DIR}/.bash_profile | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "if [ -f .bash_aliases ]; then\n  . .bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}.bash_aliases ]; then\n  . ${HOME_DIR}.bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
     if [ "$?" = 1 ] # could be readonline file system, core os for example
       then
         BASH_PROFILE_CONTENT=$(cat ${HOME_DIR}/.bash_profile)
