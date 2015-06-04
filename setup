@@ -8,14 +8,19 @@ if [ "$1" = "" ]
 fi
 
 echo "Creating dotfile symlinks using home directory: ${HOME_DIR}"
-ln -sfn ${HOME_DIR}/.dotfiles/vim ${HOME_DIR}/.vim
-ln -sf ${HOME_DIR}/.dotfiles/vimrc ${HOME_DIR}/.vimrc
+
+if [ "$1" != "core" ]
+  then
+    ln -sfn ${HOME_DIR}/.dotfiles/vim ${HOME_DIR}/.vim
+    ln -sf ${HOME_DIR}/.dotfiles/vimrc ${HOME_DIR}/.vimrc
+fi
 ln -sf ${HOME_DIR}/.dotfiles/bash_aliases ${HOME_DIR}/.bash_aliases
+ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
 
 cat ${HOME_DIR}/.bash_profile | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "if [ -f .bash_aliases ]; then\n  . .bash_aliases\nfi" >> ${HOME_DIR}/.bash_profile
+    printf "if [ -f .bash_aliases ]; then\n  . .bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
     if [ "$?" = 1 ] # could be readonline file system, core os for example
       then
         BASH_PROFILE_CONTENT=$(cat ${HOME_DIR}/.bash_profile)
