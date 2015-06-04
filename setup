@@ -16,6 +16,7 @@ if [ "$1" != "core" ]
 fi
 ln -sf ${HOME_DIR}/.dotfiles/bash_aliases ${HOME_DIR}/.bash_aliases
 ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
+ln -sf ${HOME_DIR}/.dotfiles/gitignore_global ${HOME_DIR}/.gitignore_global
 
 cat ${HOME_DIR}/.bash_profile | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
