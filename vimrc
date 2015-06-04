@@ -25,7 +25,7 @@ set autoindent
 """"""""""
 " Plugins
 """"""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin($HOME . '/.vim/plugged')
 
 " Make sure you use single quotes
 Plug 'junegunn/seoul256.vim'
@@ -58,10 +58,10 @@ filetype plugin on " for nerd commenter plugin
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': 'yes \| ./install' }
 
 " Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+Plug $HOME . '/my-prototype-plugin'
 
 call plug#end()
 
