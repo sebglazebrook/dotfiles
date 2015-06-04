@@ -5,4 +5,8 @@ alias gpl="git pull --rebase"
 alias gl="git log"
 alias b="bundle install"
 alias be="bundle exec"
-alias dc="docker-compose" # this overwrites the `dc` (desk calculator) command which I have never used.
+
+# functions that feel like aliases
+
+# dc == docker-compose
+dc() { if [[ $@ == "rspec"  ]]; then command docker-compose -f test-docker-compose.yml run appserver rspec; else command docker-compose "$@"; fi;  }
