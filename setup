@@ -19,6 +19,7 @@ ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
 ln -sf ${HOME_DIR}/.dotfiles/gitignore_global ${HOME_DIR}/.gitignore_global
 ln -sf ${HOME_DIR}/.dotfiles/inputrc ${HOME_DIR}/.inputrc
 ln -sf ${HOME_DIR}/.dotfiles/bash_env ${HOME_DIR}/.bash_env
+ln -sf ${HOME_DIR}/.dotfiles/rspec ${HOME_DIR}/.rspec
 
 cat ${HOME_DIR}/.bash_profile | grep "bash_env" &> /dev/null
 if [ "$?" != 0 ]
