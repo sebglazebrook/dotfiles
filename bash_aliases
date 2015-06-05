@@ -8,5 +8,9 @@ alias be="bundle exec"
 
 # functions that feel like aliases
 
-# dc == docker-compose
-dc() { if [[ $@ == "rspec"  ]]; then command docker-compose -f test-docker-compose.yml run appserver rspec; else command docker-compose "$@"; fi;  }
+function dc() {
+  case $* in
+    rspec* ) shift 1; command docker-compose -f test-docker-compose.yml run appserver rspec "$@";;
+    * ) command docker-compose "$@" ;;
+  esac
+}
