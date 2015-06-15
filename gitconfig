@@ -18,6 +18,7 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
