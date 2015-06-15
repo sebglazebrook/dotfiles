@@ -5,7 +5,7 @@ rebase = preserve
 [alias]
 up = pull
 st = status -sb
-	co = checkout
+co = checkout
 
 [push]
 default = simple
