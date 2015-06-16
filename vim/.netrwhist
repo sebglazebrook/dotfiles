@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/sebastianglazebrook/code/docker_tests/nginx'
-let g:netrw_dirhist_2='/Users/sebastianglazebrook/src/codingdojo/20150508_pact_intro/zoo_app/spec/service_providers/animal_service_client_spec.rb'
-let g:netrw_dirhist_3='/Users/sebastianglazebrook/code/live_chat/server'
-let g:netrw_dirhist_4='/opt/rubies/1.9.3-p484/lib/ruby/gems/1.9.1/gems/sailthru-client-4.0.2'
-let g:netrw_dirhist_5='/Users/sebastianglazebrook/src/redbubble'
-let g:netrw_dirhist_6='/Users/sebastianglazebrook/code/nginx-rails-docker/etc/nginx/conf.d'
