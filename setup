@@ -32,7 +32,7 @@ fi
 cat ${HOME_DIR}/.bash_profile | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}.bash_aliases ]; then\n  . ${HOME_DIR}.bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.bash_aliases ]; then\n  . ${HOME_DIR}/.bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
     if [ "$?" = 1 ] # could be readonline file system, core os for example
       then
         BASH_PROFILE_CONTENT=$(cat ${HOME_DIR}/.bash_profile)
