@@ -1,0 +1,6 @@
+# docker env
+if [ "$(boot2docker status)" != "running"  ]; then
+  boot2docker start
+fi
+eval "$(boot2docker shellinit 2> /dev/null)"
+export DOCKER_IP="$(boot2docker ip)"
