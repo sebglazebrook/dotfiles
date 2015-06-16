@@ -28,6 +28,7 @@ set autoindent
 call plug#begin($HOME . '/.vim/plugged')
 
 " Make sure you use single quotes
+Plug 'rust-lang/rust.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
 Plug 'junegunn/vim-easy-align'
