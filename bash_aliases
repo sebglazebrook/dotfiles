@@ -10,7 +10,7 @@ alias be="bundle exec"
 
 function dc() {
   case $* in
-    rspec* ) shift 1; command docker-compose -f test-docker-compose.yml run appserver rspec "$@";;
+    rspec* ) shift 1; command docker-compose -f compose/test.yml run appserver rspec "$@";;
     * ) command docker-compose "$@" ;;
   esac
 }
