@@ -17,6 +17,7 @@ fi
 ln -sf ${HOME_DIR}/.dotfiles/bash_aliases ${HOME_DIR}/.bash_aliases
 ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
 ln -sf ${HOME_DIR}/.dotfiles/gitignore_global ${HOME_DIR}/.gitignore_global
+ln -sf ${HOME_DIR}/.dotfiles/bash_prompt ${HOME_DIR}/.bash_prompt
 ln -sf ${HOME_DIR}/.dotfiles/inputrc ${HOME_DIR}/.inputrc
 ln -sf ${HOME_DIR}/.dotfiles/bash_env ${HOME_DIR}/.bash_env
 ln -sf ${HOME_DIR}/.dotfiles/rspec ${HOME_DIR}/.rspec
@@ -45,4 +46,10 @@ cat ${HOME_DIR}/.bash_profile | grep "docker_env" &> /dev/null
 if [ "$?" != 0 ]
   then
     printf "\nif [ -f ${HOME_DIR}/.docker_env ]; then\n  . ${HOME_DIR}/.docker_env\nfi\n" >> ${HOME_DIR}/.bash_profile
+fi
+
+cat ${HOME_DIR}/.bash_profile | grep "bash_prompt" &> /dev/null
+if [ "$?" != 0 ]
+  then
+    printf "\nif [ -f ${HOME_DIR}/.bash_prompt ]; then\n  . ${HOME_DIR}/.bash_prompt\nfi\n" >> ${HOME_DIR}/.bash_profile
 fi
