@@ -1,7 +1,7 @@
 set number
 set nowrap
 
-noremap <Leader>fu :Ag --case-sensitive <C-R><C-W><CR>
+noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 
 :cab f FZF
 :cab ff Ag
