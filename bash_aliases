@@ -1,4 +1,4 @@
-alias ll="ls -la"
+alias ll="ls -lah"
 alias gs="git status"
 alias g="gs"
 alias gpl="git pull --rebase"
