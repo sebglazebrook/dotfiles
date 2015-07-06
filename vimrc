@@ -1,6 +1,8 @@
 set number
 set nowrap
 
+noremap <Leader>fu :Ag --case-sensitive <C-R><C-W><CR>
+
 :cab f FZF
 :cab ff Ag
 :cab lh GundoToggle<CR>
@@ -9,7 +11,6 @@ imap <c-u> <esc>vaw<s-u>ea
 nmap <c-u> vaw<s-u>e
 nmap <c-u> vaw<s-u>e
 nmap <S-T> :Open(alternate#FindAlternate())<Enter>
-nmap fu :ff <C-R><C-W><CR>
 
 
 syntax on             " Enable syntax highlighting
