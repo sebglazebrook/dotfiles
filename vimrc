@@ -4,6 +4,8 @@ set cursorline " highlight the line the cursor is on
 set showmatch
 set incsearch  " search as characters are entered
 set hlsearch   " highlight matches when searching
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR> 
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 
