@@ -8,10 +8,10 @@ set hlsearch   " highlight matches when searching
 nnoremap <leader><space> :nohlsearch<CR> 
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
+noremap <Leader>u :GundoToggle<CR>
 
 :cab f FZF
 :cab ff Ag
-:cab lh GundoToggle<CR>
 
 imap <c-u> <esc>vaw<s-u>ea
 nmap <c-u> vaw<s-u>e
