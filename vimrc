@@ -4,6 +4,10 @@ set cursorline " highlight the line the cursor is on
 set showmatch
 set incsearch  " search as characters are entered
 set hlsearch   " highlight matches when searching
+set autoread   " Set to auto read when a file is changed from the outside
+set lazyredraw " Don't redraw while executing macros (good performance config)
+
+
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
 
@@ -17,7 +21,6 @@ imap <c-u> <esc>vaw<s-u>ea
 nmap <c-u> vaw<s-u>e
 nmap <c-u> vaw<s-u>e
 nmap <S-T> :Open(alternate#FindAlternate())<Enter>
-
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
