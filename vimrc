@@ -1,6 +1,7 @@
 set number
 set nowrap
 set cursorline " highlight the line the cursor is on
+set showmatch
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 
