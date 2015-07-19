@@ -14,3 +14,11 @@ function dc() {
     * ) command docker-compose "$@" ;;
   esac
 }
+
+function docker_delete_containers {
+  docker rm $(docker ps -a -q)
+}
+
+function docker_delete_images {
+  docker rmi -f  $(docker images -a -q)
+}
