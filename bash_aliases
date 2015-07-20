@@ -27,6 +27,10 @@ function docker_delete_images {
   docker rmi -f  $(docker images -a -q)
 }
 
+function g {
+  git $@
+}
+
 function v {
   vim $@
 }
