@@ -22,3 +22,7 @@ function docker_delete_containers {
 function docker_delete_images {
   docker rmi -f  $(docker images -a -q)
 }
+
+function v {
+  vim $@
+}
