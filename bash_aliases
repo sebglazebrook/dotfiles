@@ -34,3 +34,7 @@ function g {
 function v {
   vim $@
 }
+
+function c {
+  cat $@
+}
