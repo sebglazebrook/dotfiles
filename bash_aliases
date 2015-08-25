@@ -19,6 +19,10 @@ function dc() {
   esac
 }
 
+function http {
+  docker run -ti httpie $@
+}
+
 function docker_delete_containers {
   docker rm $(docker ps -a -q)
 }
