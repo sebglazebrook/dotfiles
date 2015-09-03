@@ -1,6 +1,5 @@
 alias ll="ls -lah"
 alias gs="git status"
-alias g="gs"
 alias gpl="git pull --rebase"
 alias gl="git log"
 alias b="bundle install"
