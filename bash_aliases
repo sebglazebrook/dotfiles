@@ -7,6 +7,10 @@ alias be="bundle exec"
 
 # functions that feel like aliases
 
+function ff {
+  fuzzy $@
+}
+
 function d {
   docker $@
 }
