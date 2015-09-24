@@ -56,7 +56,6 @@ Plug 'https://github.com/tpope/vim-endwise.git'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git' " require for snipmate
 Plug 'https://github.com/tomtom/tlib_vim.git' " required for snipmate
 Plug 'https://github.com/garbas/vim-snipmate.git'
-Plug 'https://github.com/vim-scripts/SearchComplete.git'
 Plug 'https://github.com/compactcode/alternate.vim.git'
 Plug 'https://github.com/compactcode/open.vim.git'
 Plug 'http://github.com/tpope/vim-fugitive.git'
