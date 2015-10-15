@@ -6,6 +6,7 @@ set incsearch  " search as characters are entered
 set hlsearch   " highlight matches when searching
 set autoread   " Set to auto read when a file is changed from the outside
 set lazyredraw " Don't redraw while executing macros (good performance config)
+set nrformats= " treat all numbers as decimal not octal
 
 
 " turn off search highlight
