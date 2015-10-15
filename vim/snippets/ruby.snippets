@@ -2,8 +2,12 @@ snippet let
 	let(:${1}) { ${2} }
 snippet debugger
 	require "debugger"; debugger
+
 snippet byebug
 	require "byebug"; byebug
+
+snippet pry
+	require "pry-byebug"; binding.pry
 snippet describe
 	describe "${1}" do
 	  ${2}
