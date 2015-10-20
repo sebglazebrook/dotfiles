@@ -1,0 +1,7 @@
+_ssh_complete()
+{
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  local known_destinations=$(cat ~/.ssh/config | grep -E "Host ([^*])" | awk '{print $2}')
+  COMPREPLY=( $(compgen -W "${known_destinations}" -- $cur) )
+}
+complete -F _ssh_complete ssh
