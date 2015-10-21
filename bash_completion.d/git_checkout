@@ -6,7 +6,8 @@ _git_checkout()
   second_command=${COMP_WORDS[1]}
 
   if [ "$second_command" = "co" ]; then
-    local branches="$(git branch --list)"
+
+    branches=$(git branch --list | sed 's/*/ /')
 
     if [ $COMP_CWORD -eq 1 ]; then
       COMPREPLY=( $(compgen -W "${branches}") )
