@@ -1,0 +1,21 @@
+_git_checkout()
+{
+  local cur prev
+
+  cur=${COMP_WORDS[COMP_CWORD]}
+  second_command=${COMP_WORDS[1]}
+
+  if [ "$second_command" = "co" ]; then
+    local branches="$(git branch --list)"
+
+    if [ $COMP_CWORD -eq 1 ]; then
+      COMPREPLY=( $(compgen -W "${branches}") )
+    else
+      COMPREPLY=( $(compgen -W "${branches}" -- $cur ) )
+    fi
+  else
+    COMPREPLY=()
+  fi
+
+}
+complete -o default -F _git_checkout git
