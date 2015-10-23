@@ -4,4 +4,4 @@ _ssh_complete()
   local known_destinations=$(cat ~/.ssh/config | grep -E "Host ([^*])" | awk '{print $2}')
   COMPREPLY=( $(compgen -W "${known_destinations}" -- $cur) )
 }
-complete -F _ssh_complete ssh
+complete -o default -F _ssh_complete ssh
