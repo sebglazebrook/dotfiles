@@ -7,6 +7,7 @@ set hlsearch   " highlight matches when searching
 set autoread   " Set to auto read when a file is changed from the outside
 set lazyredraw " Don't redraw while executing macros (good performance config)
 set nrformats= " treat all numbers as decimal not octal
+set noswapfile " don't create swap files
 
 
 " turn off search highlight
