@@ -8,11 +8,11 @@ alias be="bundle exec"
 # functions that feel like aliases
 
 function ff {
-  fuzzy $@
+  fuzzy "$@"
 }
 
 function d {
-  docker $@
+  docker "$@"
 }
 
 function dc() {
@@ -35,11 +35,11 @@ function docker_delete_images {
 }
 
 function g {
-  git $@
+  git "$@"
 }
 
 function v {
-  vim $@
+  vim "$@"
 }
 
 function c {
