@@ -27,7 +27,7 @@ function dc() {
 }
 
 function http {
-  docker run -ti httpie $@
+  docker run -ti httpie "$@"
 }
 
 function docker_delete_containers {
@@ -47,5 +47,5 @@ function v {
 }
 
 function c {
-  cat $@
+  cat "$@"
 }
