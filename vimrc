@@ -106,3 +106,8 @@ colorscheme railscasts
   "autocmd InsertEnter * call plug#load('YouCompleteMe')
                      "\| call youcompleteme#Enable() | autocmd! load_us_ycm
 "augroup END
+
+"""""""""""""""
+" JSX syntax highlighting
+"""""""""""""""
+let g:jsx_ext_required = 0  " Highlight .js as well as .jsx files
