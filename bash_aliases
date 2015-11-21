@@ -15,6 +15,10 @@ function d {
   docker "$@"
 }
 
+function dm {
+  docker-machine "$@"
+}
+
 function dc() {
   case $* in
     rspec* ) shift 1; command docker-compose -f compose/test.yml run appserver rspec "$@";;
