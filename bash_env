@@ -1,6 +1,8 @@
 # use vi on the command line
 set -o vi
 
+EDITOR=vim
+
 # show current directory in item2's tab header
 export PROMPT_COMMAND='echo -ne "\033]0;$(dirs)\007"'
 
