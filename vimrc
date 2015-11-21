@@ -41,6 +41,7 @@ set hidden
 call plug#begin($HOME . '/.vim/plugged')
 
 " Make sure you use single quotes
+Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
@@ -53,6 +54,7 @@ Plug 'Valloric/YouCompleteMe', { 'on': [] }
 Plug 'kchmck/vim-coffee-script'
 
 " Using git URL
+Plug 'https://github.com/mxw/vim-jsx.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/tpope/vim-endwise.git'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git' " require for snipmate
