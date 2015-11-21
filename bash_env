@@ -1,7 +1,7 @@
 # use vi on the command line
 set -o vi
 
-EDITOR=vim
+export EDITOR=vim
 
 # Using nvm to handle different node version
 . ~/.nvm/nvm.sh
