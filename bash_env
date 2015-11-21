@@ -3,6 +3,9 @@ set -o vi
 
 EDITOR=vim
 
+# Using nvm to handle different node version
+. ~/.nvm/nvm.sh
+
 # show current directory in item2's tab header
 export PROMPT_COMMAND='echo -ne "\033]0;$(dirs)\007"'
 
