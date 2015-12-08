@@ -21,9 +21,10 @@ alias b="bundle install"
 alias be="bundle exec"
 
 # Safety first, ask for confirmation before overriding files
-# when doing cp and mv
+# when doing cp and mv and ln
 alias cp='cp -i'
 alias mv='mv -i'
+alias ln='ln -i'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
