@@ -13,6 +13,9 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
+# Color palette for ls
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
 alias gpl="git pull --rebase"
 alias b="bundle install"
 alias be="bundle exec"
