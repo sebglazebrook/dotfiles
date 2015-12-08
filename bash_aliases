@@ -1,6 +1,5 @@
 alias ll="ls -lah"
 alias gpl="git pull --rebase"
-alias gl="git log"
 alias b="bundle install"
 alias be="bundle exec"
 
@@ -8,6 +7,10 @@ alias be="bundle exec"
 
 function gs {
   git status -sb "$@"
+}
+
+function gl {
+  git log --pretty=oneline -n 20 --graph --abbrev-commit
 }
 
 function ff {
