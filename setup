@@ -23,6 +23,7 @@ ln -sf ${HOME_DIR}/.dotfiles/bash_env ${HOME_DIR}/.bash_env
 ln -sf ${HOME_DIR}/.dotfiles/rspec ${HOME_DIR}/.rspec
 ln -sf ${HOME_DIR}/.dotfiles/docker_env ${HOME_DIR}/.docker_env
 ln -sf ${HOME_DIR}/.dotfiles/pryrc ${HOME_DIR}/.pryrc
+ln -sf ${HOME_DIR}/.dotfiles/git_prompt ${HOME_DIR}/.git_prompt
 ln -sfn ${HOME_DIR}/.dotfiles/bash_completion.d ${HOME_DIR}/.bash_completion.d
 
 cat ${HOME_DIR}/.bash_profile | grep "bash_env" &> /dev/null
