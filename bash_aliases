@@ -8,6 +8,11 @@ alias be="bundle exec"
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
 # functions that feel like aliases
 
 function gs {
