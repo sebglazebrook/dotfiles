@@ -3,18 +3,42 @@
 rebase = preserve
 
 [alias]
-up = pull
-st = status -sb
+up = pull  
+s = status -sb
 co = checkout
+
+# View abbreviated SHA, description, and history graph of the latest 20 commits
+l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+# Show verbose output about tags, branches or remotes
+tags = tag -l
+branches = branch -a
+remotes = remote -v
+
+# Find commits by source code
+fc = "!f() { git log --pretty=format:'%C(yellow)%h%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d  ' --decorate --date=short -S$1;  }; f"
+
+# Find commits by commit message
+fm = "!f() { git log --pretty=format:'%C(yellow)%h%Cblue%ad  %Creset%s%Cgreen  [% cn] %Cred%d' --decorate --date=short --grep=$1;  }; f"
+
+# Remove branches that have already been merged with master
+# a.k.a. ‘delete merged’
+dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [push]
 default = simple
 
+[apply]
+
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
+
+
 [hub]
 protocol = https
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
+[credential "https://github.com"]
+  username = sebglazebrook
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -28,3 +52,5 @@ helper = /opt/boxen/bin/boxen-git-credential
 [user]
 	name = Seb Glazebrook
 	email = sebastian.glazebrook@redbubble.com
+[credential]
+	helper = osxkeychain
