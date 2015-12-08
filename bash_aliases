@@ -13,6 +13,9 @@ alias mv='mv -i'
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
 
+# copy working directory
+alias cwd='pwd | tr -d "\r\n" | pbcopy'
+
 # functions that feel like aliases
 
 function gs {
