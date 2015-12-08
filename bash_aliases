@@ -33,6 +33,20 @@ alias map="xargs -n1"
 # copy working directory
 alias cwd='pwd | tr -d "\r\n" | pbcopy'
 
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# untar
+alias untar='tar xvf'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # functions that feel like aliases
 
 function gs {
