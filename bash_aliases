@@ -3,6 +3,11 @@ alias gpl="git pull --rebase"
 alias b="bundle install"
 alias be="bundle exec"
 
+# Safety first, ask for confirmation before overriding files
+# when doing cp and mv
+alias cp='cp -i'
+alias mv='mv -i'
+
 # functions that feel like aliases
 
 function gs {
