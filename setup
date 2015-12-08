@@ -14,17 +14,20 @@ if [ "$1" != "core" ]
     ln -sfn ${HOME_DIR}/.dotfiles/vim ${HOME_DIR}/.vim
     ln -sf ${HOME_DIR}/.dotfiles/vimrc ${HOME_DIR}/.vimrc
 fi
-ln -sf ${HOME_DIR}/.dotfiles/bash_aliases ${HOME_DIR}/.bash_aliases
-ln -sf ${HOME_DIR}/.dotfiles/gitconfig ${HOME_DIR}/.gitconfig
-ln -sf ${HOME_DIR}/.dotfiles/gitignore_global ${HOME_DIR}/.gitignore_global
-ln -sf ${HOME_DIR}/.dotfiles/bash_prompt ${HOME_DIR}/.bash_prompt
-ln -sf ${HOME_DIR}/.dotfiles/inputrc ${HOME_DIR}/.inputrc
-ln -sf ${HOME_DIR}/.dotfiles/bash_env ${HOME_DIR}/.bash_env
-ln -sf ${HOME_DIR}/.dotfiles/rspec ${HOME_DIR}/.rspec
-ln -sf ${HOME_DIR}/.dotfiles/docker_env ${HOME_DIR}/.docker_env
-ln -sf ${HOME_DIR}/.dotfiles/pryrc ${HOME_DIR}/.pryrc
-ln -sf ${HOME_DIR}/.dotfiles/git_prompt ${HOME_DIR}/.git_prompt
-ln -sfn ${HOME_DIR}/.dotfiles/bash_completion.d ${HOME_DIR}/.bash_completion.d
+
+files_to_link=( bash_aliases gitconfig gitignore_global bash_prompt inputrc bash_env rspec docker_env pryrc git_prompt )
+for file in "${files_to_link[@]}"
+do
+  echo "Linking file $file"
+  ln -sf ${HOME_DIR}/.dotfiles/$file ${HOME_DIR}/.$file
+done
+
+dir_to_link=( bash_completion.d )
+for dir in "${dir_to_link[@]}"
+do
+  echo "Linking directory $dir"
+  ln -sfn ${HOME_DIR}/.dotfiles/$dir ${HOME_DIR}/.$dir
+done
 
 cat ${HOME_DIR}/.bash_profile | grep "bash_env" &> /dev/null
 if [ "$?" != 0 ]
