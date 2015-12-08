@@ -1,11 +1,14 @@
 alias ll="ls -lah"
-alias gs="git status"
 alias gpl="git pull --rebase"
 alias gl="git log"
 alias b="bundle install"
 alias be="bundle exec"
 
 # functions that feel like aliases
+
+function gs {
+  git status -sb "$@"
+}
 
 function ff {
   fuzzy "$@"
