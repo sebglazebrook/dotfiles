@@ -1,4 +1,18 @@
-alias ll="ls -lah"
+# Enable colours when ls'ing
+colorflag="-G"
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# List all files colorized in long format, including dot files
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
 alias gpl="git pull --rebase"
 alias b="bundle install"
 alias be="bundle exec"
