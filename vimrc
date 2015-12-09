@@ -67,6 +67,7 @@ Plug 'http://github.com/sjl/gundo.vim.git'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/djoshea/vim-autoread.git'
 filetype plugin on " for nerd commenter plugin
 
 " Plugin options
