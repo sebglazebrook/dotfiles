@@ -94,7 +94,7 @@ function g {
 }
 
 function v {
-  vim "$@"
+  nvim "$@"
 }
 
 function c {
