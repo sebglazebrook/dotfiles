@@ -8,6 +8,7 @@ set autoread   " Set to auto read when a file is changed from the outside
 set lazyredraw " Don't redraw while executing macros (good performance config)
 set nrformats= " treat all numbers as decimal not octal
 set noswapfile " don't create swap files
+set relativenumber
 
 
 " turn off search highlight
