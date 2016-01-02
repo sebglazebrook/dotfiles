@@ -63,6 +63,10 @@ targz() {
   echo "${tmpFile}.gz created successfully."
 }
 
+lynx() {
+  docker run -ti sebglazebrook/lynx "$@"
+}
+
 # Create a new directory and enter it
 mkd() {
   mkdir -p "$@" && cd "$@"
