@@ -26,7 +26,7 @@ json() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-tree() {
+tre() {
   tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
