@@ -2,18 +2,19 @@
 colorflag="-G"
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+# alias l="ls -lF ${colorflag}"
+alias l="exa -lh --git"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="exa -lah --git"
+# alias la="ls -laF ${colorflag}"
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias lsd="exa -ld | grep --color=never '^d'"
 
 # Color palette for ls
+alias ls="exa"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias gpl="git pull --rebase"
