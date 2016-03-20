@@ -30,9 +30,8 @@ default = simple
 
 [apply]
 
-  # Detect whitespace errors when applying a patch
-  whitespace = fix
-
+# Detect whitespace errors when applying a patch
+whitespace = fix
 
 [hub]
 protocol = https
