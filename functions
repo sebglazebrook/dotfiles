@@ -71,3 +71,7 @@ lynx() {
 mkd() {
   mkdir -p "$@" && cd "$@"
 }
+
+rusti() {
+  docker run -ti rusti "$@"
+}
