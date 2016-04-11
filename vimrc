@@ -1,5 +1,6 @@
-set number
-set nowrap
+set number " turn on line numbers
+set relativenumber " make line numbers relative to the current line
+set nowrap " don't wrap lines that go over a screens width
 set cursorline " highlight the line the cursor is on
 set showmatch
 set incsearch  " search as characters are entered
@@ -8,7 +9,7 @@ set autoread   " Set to auto read when a file is changed from the outside
 set lazyredraw " Don't redraw while executing macros (good performance config)
 set nrformats= " treat all numbers as decimal not octal
 set noswapfile " don't create swap files
-set relativenumber
+set smartcase  " case insensitive search
 
 
 " turn off search highlight
@@ -21,9 +22,16 @@ noremap <Leader>u :GundoToggle<CR>
 :cab ff Ag
 
 imap <c-u> <esc>vaw<s-u>ea
-nmap <c-u> vaw<s-u>e
-nmap <c-u> vaw<s-u>e
-nmap <S-T> :Open(alternate#FindAlternate())<Enter>
+nnoremap <c-u> vaw<s-u>e
+nnoremap <S-T> :Open(alternate#FindAlternate())<Enter>
+
+" Shortcuts for 'inside' movements
+"  eg: 'd('  instead of 'di('
+onoremap ( i(
+onoremap ) i)
+vnoremap ( i(
+vnoremap ) i)
+
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -52,6 +60,7 @@ Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'kchmck/vim-coffee-script'
+Plug 'matze/vim-move'
 
 " Using git URL
 Plug 'https://github.com/mxw/vim-jsx.git'
@@ -103,3 +112,8 @@ colorscheme railscasts
 " JSX syntax highlighting
 """""""""""""""
 let g:jsx_ext_required = 0  " Highlight .js as well as .jsx files
+
+"""""""""""""""""""
+" Vim Move
+" """""""""""""""""
+let g:move_key_modifier = 'C'
