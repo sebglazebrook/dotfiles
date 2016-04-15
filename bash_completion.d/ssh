@@ -5,3 +5,4 @@ _ssh_complete()
   COMPREPLY=( $(compgen -W "${known_destinations}" -- $cur) )
 }
 complete -o default -F _ssh_complete ssh
+complete -o default -F _ssh_complete scp
