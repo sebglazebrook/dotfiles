@@ -73,5 +73,5 @@ mkd() {
 }
 
 rusti() {
-  docker run -ti rusti "$@"
+  docker run -ti sebglazebrook/rusti "$@"
 }
