@@ -82,8 +82,7 @@ filetype plugin on " for nerd commenter plugin
 " Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf'
 
 " Unmanaged plugin (manually installed and updated)
 Plug $HOME . '/my-prototype-plugin'
