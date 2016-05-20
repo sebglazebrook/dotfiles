@@ -3,6 +3,9 @@ set -o vi
 
 export EDITOR=vim
 
+# Used by rustup
+source $HOME/.cargo/env 1> /dev/null
+
 # Using nvm to handle different node version
 . ~/.nvm/nvm.sh
 
