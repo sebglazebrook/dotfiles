@@ -52,11 +52,14 @@ call plug#begin($HOME . '/.vim/plugged')
 "" Make sure you use single quotes
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
-Plug 'https://github.com/jpo/vim-railscasts-theme.git'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
+
+" Colorschemes
+Plug 'https://github.com/jpo/vim-railscasts-theme.git'
+Plug 'https://github.com/morhetz/gruvbox'
 
 "" Using git URL
 Plug 'https://github.com/mxw/vim-jsx.git'
@@ -99,7 +102,7 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 """"""""""""""
 " Color Scheme
 """"""""""""""
-silent! colorscheme railscasts
+silent! colorscheme gruvbox
 
 """""""""""""""
 " JSX syntax highlighting
