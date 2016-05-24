@@ -60,6 +60,7 @@ Plug 'jlanzarotta/bufexplorer'
 " Colorschemes
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
 Plug 'https://github.com/morhetz/gruvbox'
+set background=dark
 
 "" Using git URL
 Plug 'https://github.com/mxw/vim-jsx.git'
