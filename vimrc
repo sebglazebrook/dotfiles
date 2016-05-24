@@ -13,7 +13,7 @@ set smartcase  " case insensitive search
 
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader><space> :nohlsearch<CR>
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 noremap <Leader>u :GundoToggle<CR>
@@ -44,25 +44,21 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 set hidden
 
-""""""""""
-" Plugins
-""""""""""
+"""""""""""
+"" Plugins
+"""""""""""
 call plug#begin($HOME . '/.vim/plugged')
 
-" Make sure you use single quotes
+"" Make sure you use single quotes
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
-Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'kchmck/vim-coffee-script'
-Plug 'matze/vim-move'
 
-" Using git URL
+"" Using git URL
 Plug 'https://github.com/mxw/vim-jsx.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/tpope/vim-endwise.git'
@@ -72,8 +68,6 @@ Plug 'https://github.com/garbas/vim-snipmate.git'
 Plug 'https://github.com/compactcode/alternate.vim.git'
 Plug 'https://github.com/compactcode/open.vim.git'
 Plug 'http://github.com/tpope/vim-fugitive.git'
-Plug 'http://github.com/sjl/gundo.vim.git'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/djoshea/vim-autoread.git'
@@ -85,7 +79,7 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf'
 
 " Unmanaged plugin (manually installed and updated)
-Plug $HOME . '/my-prototype-plugin'
+" Plug $HOME . '/my-prototype-plugin'
 
 call plug#end()
 
