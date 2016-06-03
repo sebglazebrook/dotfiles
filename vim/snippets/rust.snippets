@@ -14,3 +14,21 @@ snippet debug
 	warn!("${1}")
 snippet error
 	error!("${1}")
+snippet assert
+	assert!(${1})
+snippet describe
+	describe! ${1} {
+		${2}
+	}
+snippet it
+	it "${1}" {
+		${2}
+	}
+snippet before
+	before_each {
+		${1}
+	}
+snippet after
+	after_each {
+		${1}
+	}
