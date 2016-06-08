@@ -17,6 +17,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 noremap <Leader>u :GundoToggle<CR>
+noremap <Leader>fo vap :fold<CR>
 
 :cab f FZF
 :cab ff Ag
