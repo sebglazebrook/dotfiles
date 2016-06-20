@@ -111,8 +111,8 @@ MAGENTA="\e[35m";
 LIGHT_CYAN="\e[96m";
 CLEAR_COLOURS="\e[0m";
 GREEN="\e[92m";
-YELLOW="\e[33m";
-RED="\e[31m";
+YELLOW="\e[38;5;184m";
+RED="\e[38;5;202m";
 LIGHT_BLUE="\e[94m";
 
 function ps1_git_branch_text_color() {
