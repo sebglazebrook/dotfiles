@@ -1,27 +1,8 @@
 # Enable colours when ls'ing
 colorflag="-G"
-
-# List all files colorized in long format
-# alias l="ls -lF ${colorflag}"
-alias l="exa -lh --git"
-
-# List all files colorized in long format, including dot files
-alias la="exa -lah --git"
-# alias la="ls -laF ${colorflag}"
-
-# List only directories
-# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-alias lsd="exa -ld | grep --color=never '^d'"
-
-# Color palette for ls
-alias ls="exa"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# Safety first, ask for confirmation before overriding files
-# when doing cp and mv and ln
-alias cp='cp -i'
-alias mv='mv -i'
-alias ln='ln -i'
+alias mv="mv -i"
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
