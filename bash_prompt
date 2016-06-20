@@ -116,7 +116,9 @@ RED="\e[38;5;202m";
 LIGHT_BLUE="\e[94m";
 
 function ps1_git_branch_text_color() {
-  if `git status | grep "working directory clean" > /dev/null` ;then
+  if `! test -d .git` ; then
+    echo -e "${GREEN}";
+  elif `git status | grep "working directory clean" > /dev/null` ;then
     echo -e "${GREEN}";
   elif `git status | grep "Changes to be committed" > /dev/null` ;then
     echo -e "${YELLOW}";
@@ -128,17 +130,24 @@ function ps1_git_branch_text_color() {
 }
 
 function ps1_current_branch() {
-  BRANCH="$(cwb 2>/dev/null)";
 
-  if [ ${#BRANCH} -gt 15 ];then
-    BRANCH="${BRANCH:0:15}...";
+  if `! test -d .git` ; then
+    echo -e "$(ps1_git_branch_text_color)-${CLEAR_COLOURS}";
+  else
+    BRANCH="$(cwb 2>/dev/null)";
+    if [ ${#BRANCH} -gt 15 ];then
+      BRANCH="${BRANCH:0:15}...";
+    fi
+    echo -e "$(ps1_git_branch_text_color)${BRANCH}${CLEAR_COLOURS}";
   fi
-
-  echo -e "$(ps1_git_branch_text_color)${BRANCH}${CLEAR_COLOURS}";
 }
 
 function ps1_current_working_directory() {
-  echo -e "${LIGHT_BLUE}$(basename ${PWD})${CLEAR_COLOURS}";
+  if [ $HOME = $PWD  ];then
+    echo -e "${LIGHT_BLUE}~${CLEAR_COLOURS}";
+  else
+    echo -e "${LIGHT_BLUE}$(basename ${PWD})${CLEAR_COLOURS}";
+  fi
 }
 
 export PS1="\$(ps1_current_working_directory):\$(ps1_current_branch) $ "
