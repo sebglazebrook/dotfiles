@@ -91,17 +91,53 @@ source ~/.git_prompt
 # This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
 # I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
 
-export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
-if [ $? -eq 0 ]; then \
-  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
-  if [ "$?" -eq "0" ]; then \
-    # @4 - Clean repository - nothing to commit
-    echo "'$Green'"$(__git_ps1 " (%s)"); \
-  else \
-    # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$PathShort$Color_Off'\$ "; \
-else \
-  # @2 - Prompt when not in GIT repo
-  echo " '$Yellow$PathShort$Color_Off'\$ "; \
-fi)'
+#export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
+#if [ $? -eq 0 ]; then \
+  #echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
+  #if [ "$?" -eq "0" ]; then \
+    ## @4 - Clean repository - nothing to commit
+    #echo "'$Green'"$(__git_ps1 " (%s)"); \
+  #else \
+    ## @5 - Changes to working tree
+    #echo "'$IRed'"$(__git_ps1 " {%s}"); \
+  #fi) '$BYellow$PathShort$Color_Off'\$ "; \
+#else \
+  ## @2 - Prompt when not in GIT repo
+  #echo " '$Yellow$PathShort$Color_Off'\$ "; \
+#fi)'
+
+# http://misc.flogisoft.com/bash/tip_colors_and_formatting
+MAGENTA="\e[35m";
+LIGHT_CYAN="\e[96m";
+CLEAR_COLOURS="\e[0m";
+GREEN="\e[92m";
+YELLOW="\e[33m";
+RED="\e[31m";
+
+function ps1_git_branch_text_color() {
+  if `git status | grep "working directory clean" > /dev/null` ;then
+    echo -e "${GREEN}";
+  elif `git status | grep "Changes to be committed" > /dev/null` ;then
+    echo -e "${YELLOW}";
+  elif `git status | grep "Changes not staged for commit" > /dev/null` ;then
+    echo -e "${YELLOW}";
+  else
+    echo -e "${RED}";
+  fi
+}
+
+function ps1_current_branch() {
+  BRANCH="$(cwb 2>/dev/null)";
+
+  if [ ${#BRANCH} -gt 15 ];then
+    BRANCH="${BRANCH:0:15}...";
+  fi
+
+  echo -e "$(ps1_git_branch_text_color)${BRANCH}${CLEAR_COLOURS}";
+}
+
+function ps1_current_working_directory() {
+  echo -e "${MAGENTA}$(basename ${PWD})${CLEAR_COLOURS}";
+}
+
+export PS1="\$(ps1_current_working_directory):\$(ps1_current_branch) $ "
