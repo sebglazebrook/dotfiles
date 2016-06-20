@@ -113,6 +113,7 @@ CLEAR_COLOURS="\e[0m";
 GREEN="\e[92m";
 YELLOW="\e[33m";
 RED="\e[31m";
+LIGHT_BLUE="\e[94m";
 
 function ps1_git_branch_text_color() {
   if `git status | grep "working directory clean" > /dev/null` ;then
@@ -137,7 +138,7 @@ function ps1_current_branch() {
 }
 
 function ps1_current_working_directory() {
-  echo -e "${MAGENTA}$(basename ${PWD})${CLEAR_COLOURS}";
+  echo -e "${LIGHT_BLUE}$(basename ${PWD})${CLEAR_COLOURS}";
 }
 
 export PS1="\$(ps1_current_working_directory):\$(ps1_current_branch) $ "
