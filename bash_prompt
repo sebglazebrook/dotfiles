@@ -141,3 +141,5 @@ function ps1_current_working_directory() {
 }
 
 export PS1="\$(ps1_current_working_directory):\$(ps1_current_branch) $ "
+export PS2="\$(echo -e \"${GREEN}> ${CLEAR_COLOURS}\")"
+export PS4="\$(echo -e \"${GREEN}++ ${CLEAR_COLOURS}\")"
