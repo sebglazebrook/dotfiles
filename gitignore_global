@@ -3,3 +3,5 @@ sebster
 .idea
 tags
 *.swp
+.agignore
+npm-debug.log*
