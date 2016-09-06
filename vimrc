@@ -10,6 +10,7 @@ set lazyredraw " Don't redraw while executing macros (good performance config)
 set nrformats= " treat all numbers as decimal not octal
 set noswapfile " don't create swap files
 set smartcase  " case insensitive search
+set mouse=a "turn the mouse on
 
 
 " turn off search highlight
@@ -17,10 +18,19 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
 noremap <Leader>u :GundoToggle<CR>
-noremap <Leader>fo vap :fold<CR>
+noremap <Leader>fo v% :fold<CR>
+nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
+nnoremap <leader>where op method(:render).source_location
+" nnoremap <leader>fp :!echo % | pbcopy<CR>
 
 :cab f FZF
 :cab ff Ag
+
+" for Guilherme
+:cab tabp bp
+:cab tabn bn
+:cab tabe edit
+nmap ,gg :f<CR>
 
 imap <c-u> <esc>vaw<s-u>ea
 nnoremap <c-u> vaw<s-u>e
@@ -57,6 +67,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'danro/rename.vim'
 
 " Colorschemes
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
@@ -115,3 +126,5 @@ let g:jsx_ext_required = 0  " Highlight .js as well as .jsx files
 " Vim Move
 " """""""""""""""""
 let g:move_key_modifier = 'C'
+
+set tags=./tags,tags,.git/tags,rusty-tags.vi;$HOME
