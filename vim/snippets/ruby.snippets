@@ -16,6 +16,10 @@ snippet it
 	it "${1}" do
 	  ${2}
 	end
+snippet xit
+	xit "${1}" do
+	  ${2}
+	end
 snippet subject
 	subject { ${1} }
 snippet context
@@ -38,3 +42,5 @@ snippet before
 	end
 snippet allow
 	allow(${1}).to receive(:${2})
+snippet def init
+	def initialize${1}
