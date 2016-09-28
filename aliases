@@ -1,0 +1,122 @@
+a:
+  command: aliases
+b:
+  command: bundle
+be:
+  command: bundle exec
+cwb:
+  command: git branch | grep "*" | awk '{print $2}'
+d:
+  command: docker
+dm:
+  command: docker-machine
+docker-use-local:
+  command: source <(docker-machine env local)
+docker-use-seb:
+  command: source <(docker-machine env seb-dev)
+c:
+  command: clear
+cwd:
+  command: pwd | tr -d "\r\n" | pbcopy
+fetch:
+  command: git fetch
+ff:
+  command: fuzz
+fuzzhi:
+  command: arg=$(FZF) && $0 $arg && echo $0 $arg >> ~/.bash_history
+  enable_positional_arguments: true
+find-changed-last-hour:
+  command: find . -cmin -60
+find-modified-last-hour:
+  command: find . -mmin -60
+find-accessed-last-hour:
+  command: find . -amin -60
+find-largest-files:
+  command: find . -type f -exec command -p ls -s {} \; | sort -n -r | head -5
+g:
+  command: git
+ga:
+  command: git add -p
+gco:
+  command: git checkout -p
+gc:
+  command: git commit -v
+gpl:
+  command: git pull --rebase
+gp:
+  command: git push
+gs:
+  command: git status -sb
+gdc:
+  command: git diff --cached
+gd:
+  command: git diff
+gl:
+  command: git log --pretty=oneline -n 20 --graph --abbrev-commit
+git-delete-merged:
+  command: git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d
+git-show-files:
+  command: git show --name-only
+git-undo-last-commit:
+  command: git reset --soft HEAD~
+git-find-commit-containing-text:
+  command: git log -Gword
+git-find-commit-message-containing:
+  command: git log --grep=word
+kumo:
+  command: /Users/sebastianglazebrook/src/kumo/bin/kumo
+ll:
+  command: ls -la
+pass:
+  command: grep password $HOME/src/redbubble/config/deploy.rb | awk -F\" '{print $2}' | pbcopy
+rusti:
+  command: docker-use-local && docker run -ti rusti
+untar:
+  command: tar xvf
+v:
+  command: nvim
+l:
+  command: exa -lh --git
+la:
+  command: exa -lah --git
+lsd:
+  command: exa -ld | grep --color=never '^d'
+ls:
+  command: exa
+
+# Safety first, ask for confirmation before overriding files
+# when doing cp and mv and ln
+cp:
+  command: command -p cp -i
+ln:
+  command: command -p ln -i
+ln:
+  command: command -p ln -i
+v:
+  command: docker run -v "${PWD}":/app -ti sebglazebrook/my-neovim vim
+vim-replace:
+  command : ag -l "$0" | xargs -o vim -c "bufdo %s!$0!$1!gc"
+  enable_positional_arguments: true
+n:
+  command: v
+pasta:
+  command: git checkout master
+rainbow:
+  command: for i in {0..255};do echo  "$(tput setaf $i)RAINBOW! $i" ;done
+set-term-colors:
+  command: reset-colors
+  quiet: true
+reset-colors:
+  command: tput sgr0
+  quiet: true
+set-green-text:
+  command: tput setaf 2
+  quiet: true
+ssh-prod-rabbit:
+  command: ssh deploy@ec2-54-166-249-56.compute-1.amazonaws.com
+mux:
+  command: tmux -2
+which:
+  command: type -p
+yelp:
+  command: aliases list --directory ${PWD}
