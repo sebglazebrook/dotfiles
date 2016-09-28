@@ -23,7 +23,7 @@ fetch:
 ff:
   command: fuzz
 fuzzhi:
-  command: arg=$(FZF) && $0 $arg && echo $0 $arg >> ~/.bash_history
+  command: arg=$(FZF) && $0 $arg && echo $0 $arg >> ${HISTFILE:-~/.bash_history}
   enable_positional_arguments: true
 find-changed-last-hour:
   command: find . -cmin -60
