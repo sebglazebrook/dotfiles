@@ -9,6 +9,9 @@ source $HOME/.cargo/env 1> /dev/null
 # Using nvm to handle different node version
 . ~/.nvm/nvm.sh
 
+# fix spelling mistakes when trying to `cd`
+shopt -s cdspell
+
 # show current directory in item2's tab header
 export PROMPT_COMMAND='echo -ne "\033]0;$(dirs)\007"'
 
