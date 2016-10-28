@@ -45,6 +45,10 @@ gpl:
   command: git pull --rebase
 gp:
   command: git push
+gpu:
+  command: git push -u origin HEAD
+gpsu:
+  command: git push --set-upstream origin $(cwb)
 gs:
   command: git status -sb
 gdc:
