@@ -67,8 +67,6 @@ kumo:
   command: /Users/sebastianglazebrook/src/kumo/bin/kumo
 ll:
   command: ls -la
-pass:
-  command: grep password $HOME/src/redbubble/config/deploy.rb | awk -F\" '{print $2}' | pbcopy
 rusti:
   command: docker-use-local && docker run -ti rusti
 untar:
