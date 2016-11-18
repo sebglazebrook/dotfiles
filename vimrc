@@ -69,6 +69,7 @@ Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'danro/rename.vim'
+Plug 'gilligan/vim-lldb'
 
 " Colorschemes
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
