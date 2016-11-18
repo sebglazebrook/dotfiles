@@ -32,3 +32,12 @@ snippet after
 	after_each {
 		${1}
 	}
+snippet test
+	#[test]
+	fn ${1}() {
+		${2}
+	}
+snippet fn
+	fn ${1}(${2})${3}{
+		${4}
+	}
