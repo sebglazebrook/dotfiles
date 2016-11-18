@@ -29,50 +29,54 @@ do
   ln -sfn ${HOME_DIR}/.dotfiles/$dir ${HOME_DIR}/.$dir
 done
 
-cat ${HOME_DIR}/.bash_profile | grep "bash_env" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "bash_env" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.bash_env ]; then\n  . ${HOME_DIR}/.bash_env\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.bash_env ]; then\n  . ${HOME_DIR}/.bash_env\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep "functions" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "functions" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.functions ]; then\n  . ${HOME_DIR}/.functions\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.functions ]; then\n  . ${HOME_DIR}/.functions\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep "redbubble" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "redbubble" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.redbubble ]; then\n  . ${HOME_DIR}/.redbubble\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.redbubble ]; then\n  . ${HOME_DIR}/.redbubble\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep bash_aliases &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.bash_aliases ]; then\n  . ${HOME_DIR}/.bash_aliases\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.bash_aliases ]; then\n  . ${HOME_DIR}/.bash_aliases\nfi\n" >> ${HOME_DIR}/.bashrc
     if [ "$?" = 1 ] # could be readonline file system, core os for example
       then
-        BASH_PROFILE_CONTENT=$(cat ${HOME_DIR}/.bash_profile)
-        rm ${HOME_DIR}/.bash_profile
-        printf "${BASH_PROFILE_CONTENT}\n\nif [ -f .bash_aliases ]; then\n  . ${HOME_DIR}/.bash_aliases\nfi" >> ${HOME_DIR}/.bash_profile
+        BASH_PROFILE_CONTENT=$(cat ${HOME_DIR}/.bashrc)
+        rm ${HOME_DIR}/.bashrc
+        printf "${BASH_PROFILE_CONTENT}\n\nif [ -f .bash_aliases ]; then\n  . ${HOME_DIR}/.bash_aliases\nfi" >> ${HOME_DIR}/.bashrc
     fi
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep "docker_env" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "docker_env" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.docker_env ]; then\n  . ${HOME_DIR}/.docker_env\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.docker_env ]; then\n  . ${HOME_DIR}/.docker_env\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep "bash_prompt" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "bash_prompt" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "\nif [ -f ${HOME_DIR}/.bash_prompt ]; then\n  . ${HOME_DIR}/.bash_prompt\nfi\n" >> ${HOME_DIR}/.bash_profile
+    printf "\nif [ -f ${HOME_DIR}/.bash_prompt ]; then\n  . ${HOME_DIR}/.bash_prompt\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bash_profile | grep "bash_completion\.d" &> /dev/null
+cat ${HOME_DIR}/.bashrc | grep "bash_completion\.d" &> /dev/null
 if [ "$?" != 0 ]
   then
-    printf "for f in ~/.bash_completion.d/* ; do source \$f; done\n" >> ${HOME_DIR}/.bash_profile
+    printf "for f in ~/.bash_completion.d/* ; do source \$f; done\n" >> ${HOME_DIR}/.bashrc
+fi
+
+if [ -f ~/.bash_profile  ]; then
+  printf "source ~/.bashrc \n" >> ${HOME_DIR}/.bash_profile
 fi
