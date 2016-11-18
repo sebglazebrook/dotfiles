@@ -11,6 +11,7 @@ set nrformats= " treat all numbers as decimal not octal
 set noswapfile " don't create swap files
 set smartcase  " case insensitive search
 set mouse=a "turn the mouse on
+set spell spelllang=en_us "Spell checking on
 
 
 " turn off search highlight
