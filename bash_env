@@ -12,6 +12,9 @@ source $HOME/.cargo/env 1> /dev/null
 # fix spelling mistakes when trying to `cd`
 shopt -s cdspell
 
+# enable extended globbing
+shopt -s extglob
+
 # show current directory in item2's tab header
 export PROMPT_COMMAND='echo -ne "\033]0;$(dirs)\007"'
 
