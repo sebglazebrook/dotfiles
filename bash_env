@@ -26,3 +26,8 @@ shopt -s histappend # When the shell exits, append to the history file instead o
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 export FZF_DEFAULT_COMMAND='walk --files-only'
+
+# Check if tmux is a thing and attach to it's session or create a new one
+if [ `type -p tmux` ];then
+  tmux attach || tmux new
+fi
