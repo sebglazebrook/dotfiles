@@ -52,5 +52,3 @@ protocol = https
 [user]
 	name = Seb Glazebrook
 	email = sebastian.glazebrook@redbubble.com
-[credential]
-	helper = osxkeychain
