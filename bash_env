@@ -25,7 +25,15 @@ export HISTFILESIZE=100000               # big big history
 shopt -s histappend # When the shell exits, append to the history file instead of overwriting it
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-export FZF_DEFAULT_COMMAND='walk --files-only'
+
+if `type -p walk > /dev/null` ; then
+  export FZF_DEFAULT_COMMAND='walk --files-only'
+elif `type -p ag > /dev/null` ; then
+  export FZF_DEFAULT_COMMAND='ag -l'
+else
+  export FZF_DEFAULT_COMMAND='find .'
+fi
+
 
 # Check if tmux is a thing and attach to it's session or create a new one
 if [ `type -p tmux` ];then
