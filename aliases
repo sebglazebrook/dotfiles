@@ -67,6 +67,8 @@ git-find-commit-containing-text:
   command: git log -Gword
 git-find-commit-message-containing:
   command: git log --grep=word
+git-find-commit-that-introduced-string:
+  command: git log -S $0 --format="%H" --reverse | head -n 1 | xargs git show
 kumo:
   command: /Users/sebastianglazebrook/src/kumo/bin/kumo
 ll:

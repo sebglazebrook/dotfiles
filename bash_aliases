@@ -21,12 +21,6 @@ alias -- -="cd -"
 alias sudo='sudo '
 
 # functions that feel like aliases
-function dc() {
-  case $* in
-    rspec* ) shift 1; command docker-compose -f compose/test.yml run appserver rspec "$@";;
-    * ) command docker-compose "$@" ;;
-  esac
-}
 
 function http {
   docker run -ti httpie "$@"
