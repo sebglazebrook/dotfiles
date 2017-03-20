@@ -6,6 +6,10 @@ be:
   command: bundle exec
 cwb:
   command: git branch | grep "*" | awk '{print $2}'
+cat-lines:
+  command:  paste -d" "
+ctop:
+  command: docker run -ti --name ctop --rm -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest
 d:
   command: docker
 dm:
