@@ -1,3 +1,14 @@
+first:
+  command: head -n 1
+second:
+  command: tail -n +2 | head -n 1
+last:
+  command: tail -n 1
+foobar:
+  command: read piped_input; bash -c \"$0" $piped_input
+grab:
+  command: awk -v position=$0 '{print $position}'
+  quiet: true
 a:
   command: aliases
 b:
@@ -12,6 +23,8 @@ ctop:
   command: docker run -ti --name ctop --rm -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest
 d:
   command: docker
+dc:
+  command: docker-compose
 dm:
   command: docker-machine
 docker-use-local:
@@ -73,6 +86,8 @@ git-find-commit-message-containing:
   command: git log --grep=word
 git-find-commit-that-introduced-string:
   command: git log -S $0 --format="%H" --reverse | head -n 1 | xargs --no-run-if-empty git show
+git-shallow-clone:
+  command: git clone -n $0 --depth 1
 kumo:
   command: /Users/sebastianglazebrook/src/kumo/bin/kumo
 ll:
@@ -84,13 +99,13 @@ untar:
 v:
   command: nvim
 l:
-  command: exa -lh --git
+  command: command -p ls
 la:
-  command: exa -lah --git
+  command: command -p ls
 lsd:
-  command: exa -ld | grep --color=never '^d'
+  command: command -p ls
 ls:
-  command: exa
+  command: command -p ls
 
 # Safety first, ask for confirmation before overriding files
 # when doing cp and mv and ln
