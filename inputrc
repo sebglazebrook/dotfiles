@@ -20,3 +20,6 @@ set skip-completed-text on"
 set show-mode-in-prompt on
 set vi-ins-mode-string ""
 set vi-cmd-mode-string "!"
+
+# Map Control-f to fzf's bash completion
+Control-f: "**\t"
