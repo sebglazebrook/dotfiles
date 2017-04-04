@@ -66,6 +66,9 @@ gpu:
   command: git push -u origin HEAD
 gpsu:
   command: git push --set-upstream origin $(cwb)
+gpf:
+  command: git push --force-with-lease
+  backout_seconds: 3
 gs:
   command: git status -sb
 gdc:
