@@ -121,7 +121,7 @@ ln:
 v:
   command: docker run -v "${PWD}":/app -ti sebglazebrook/my-neovim vim
 vim-replace:
-  command : ag -l "$0" | xargs -o vim -c "bufdo %s!$0!$1!gc"
+  command: ag -l "$0" && vim -c "bufdo %s/$0/$1/gc" $(ag -l "$0")
   enable_positional_arguments: true
 n:
   command: v
