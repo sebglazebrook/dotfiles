@@ -15,7 +15,7 @@ if [ "$1" != "core" ]
     ln -sf ${HOME_DIR}/.dotfiles/vimrc ${HOME_DIR}/.vimrc
 fi
 
-files_to_link=( bash_aliases gitconfig gitignore_global bash_prompt inputrc bash_env rspec docker_env pryrc git_prompt functions redbubble aliases tmux.conf)
+files_to_link=( bash_aliases gitconfig gitignore_global bash_prompt inputrc bash_env rspec docker_env pryrc git_prompt functions redbubble aliases tmux.conf alacritty.yml)
 for file in "${files_to_link[@]}"
 do
   echo "Linking file $file"
