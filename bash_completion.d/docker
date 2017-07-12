@@ -1,0 +1,21 @@
+_docker_completion() {
+
+  local cur second_command
+
+  cur=${COMP_WORDS[COMP_CWORD]}
+  second_command=${COMP_WORDS[1]}
+
+  case ${second_command} in
+    rm)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    exec)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+  esac
+
+
+
+}
+complete -o default -F _docker_completion docker
+
