@@ -143,3 +143,7 @@ which:
   command: "type -p"
 yelp:
   command: "aliases list --directory ${PWD}"
+sqlectron:
+  command: "docker run -ti -v ~/.sqlectron.json:/root/.sqlectron.json sebglazebrook/sqlectron sh"
+irb:
+  command: "docker run -ti ruby:alpine irb"
