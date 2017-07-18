@@ -26,8 +26,8 @@ shopt -s histappend # When the shell exits, append to the history file instead o
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-if `type -p walk > /dev/null` ; then
-  export FZF_DEFAULT_COMMAND='walk --files-only'
+if `type -p rg > /dev/null` ; then
+  export FZF_DEFAULT_COMMAND='rg --files'
 elif `type -p ag > /dev/null` ; then
   export FZF_DEFAULT_COMMAND='ag -l'
 else
