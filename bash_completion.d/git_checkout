@@ -5,18 +5,24 @@ _git_checkout()
   cur=${COMP_WORDS[COMP_CWORD]}
   second_command=${COMP_WORDS[1]}
 
-  if [ "$second_command" = "co" ]; then
+  case ${second_command} in
+    co)
+      branches=$(git branch --list | sed 's/*/ /')
+      if [ $COMP_CWORD -eq 1 ]; then
+        COMPREPLY=( $(compgen -W "${branches}") )
+      else
+        COMPREPLY=( $(compgen -W "${branches}" -- $cur ) )
+      fi
+      ;;
+    add)
+      local results="$(git status --short | awk '{ print $2 }' | fzf --height 40% --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+  esac
 
-    branches=$(git branch --list | sed 's/*/ /')
 
-    if [ $COMP_CWORD -eq 1 ]; then
-      COMPREPLY=( $(compgen -W "${branches}") )
-    else
-      COMPREPLY=( $(compgen -W "${branches}" -- $cur ) )
-    fi
-  else
-    COMPREPLY=()
-  fi
 
 }
+
 complete -o default -F _git_checkout git
