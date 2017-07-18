@@ -67,6 +67,12 @@ if [ "$?" != 0 ]
     printf "\nif [ -f ${HOME_DIR}/.bash_prompt ]; then\n  . ${HOME_DIR}/.bash_prompt\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
+cat ${HOME_DIR}/.bashrc | grep "linux-key-mapping" &> /dev/null
+if [ "$?" != 0 ]
+  then
+    printf "\nif [ -f ${HOME_DIR}/.linux-key-mapping ]; then\n  . ${HOME_DIR}/.linux-key-mapping\nfi\n" >> ${HOME_DIR}/.bashrc
+fi
+
 cat ${HOME_DIR}/.bashrc | grep "bash_completion\.d" &> /dev/null
 if [ "$?" != 0 ]
   then

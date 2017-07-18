@@ -1,0 +1,5 @@
+setxkbmap -option 'caps:ctrl_modifier'
+pgrep -f xcape > /dev/null
+if [ $? -ne 0 ]; then
+  xcape -e 'Caps_Lock=Escape' -t  75
+fi
