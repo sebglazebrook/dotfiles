@@ -12,6 +12,27 @@ _docker_completion() {
     exec)
       COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
       ;;
+    cp)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    diff)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    attach)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    inspect)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    kill)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    logs)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
+    top)
+      COMPREPLY=$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | fzf | awk '{ print $2 }')
+      ;;
   esac
 
 
