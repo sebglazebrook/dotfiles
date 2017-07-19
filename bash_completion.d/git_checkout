@@ -15,7 +15,7 @@ _git_checkout()
       fi
       ;;
     add)
-      local results="$(git status --short | awk '{ print $2 }' | fzf --height 40% --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
+      local results="$(git status --short | awk '{ print $2 }' | fzf --height 40% --reverse --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
