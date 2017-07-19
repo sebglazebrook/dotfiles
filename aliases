@@ -147,3 +147,5 @@ sqlectron:
   command: "docker run -ti -v ~/.sqlectron.json:/root/.sqlectron.json sebglazebrook/sqlectron sh"
 irb:
   command: "docker run -ti ruby:alpine irb"
+kubectl:
+  command: "docker run -ti -v ~/.kube:/root/.kube -e AWS_DEFAULT_REGION -e AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID sebglazebrook/kubectl ./kubectl"
