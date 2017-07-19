@@ -8,47 +8,47 @@ _docker_completion() {
 
   case ${second_command} in
     rm)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     exec)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     cp)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     diff)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     attach)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     inspect)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     kill)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     logs)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     top)
-      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% | awk '{ print $2 }')"
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
