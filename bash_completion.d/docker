@@ -52,6 +52,11 @@ _docker_completion() {
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
+    run)
+      local results="$(docker images | grep -v '<none>' | tail -n +2 | fzf --height 20% --reverse | tr -s ' ' | cut -d ' ' -f 1,2 | sed 's! !:!')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
   esac
 
 
