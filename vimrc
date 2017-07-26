@@ -17,7 +17,7 @@ set spell spelllang=en_us "Spell checking on
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-noremap <Leader>fu :Ag --case-sensitive "\W<C-R><C-W>\W" <CR>
+noremap <Leader>fu :Rg --case-sensitive "\W<C-R><C-W>\W" <CR>
 noremap <Leader>u :GundoToggle<CR>
 noremap <Leader>fo v% :fold<CR>
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
@@ -25,7 +25,7 @@ nnoremap <leader>where op method(:render).source_location
 " nnoremap <leader>fp :!echo % | pbcopy<CR>
 
 :cab f FZF
-:cab ff Ag
+:cab ff Rg
 
 " for Guilherme
 :cab tabp bp
@@ -66,7 +66,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
-Plug 'rking/ag.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'danro/rename.vim'
 Plug 'gilligan/vim-lldb'
@@ -89,6 +88,7 @@ Plug 'http://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/djoshea/vim-autoread.git'
+Plug 'https://github.com/jremmen/vim-ripgrep.git'
 filetype plugin on " for nerd commenter plugin
 
 " Plugin options
