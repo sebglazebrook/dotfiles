@@ -149,3 +149,5 @@ irb:
   command: "docker run -ti ruby:alpine irb"
 kubectl:
   command: "docker run -ti -v ~/.kube:/root/.kube -e AWS_DEFAULT_REGION -e AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID sebglazebrook/kubectl ./kubectl"
+spacemacs:
+  command: 'docker run -ti --rm --name spacemacs -e DISPLAY="unix$DISPLAY" -e UNAME="spacemacser" -e UID="1000" -e TZ=$(cat /etc/timezone) -v /tmp/.X11-unix:/tmp/.X11-unix:ro -v /etc/localtime:/etc/localtime:ro -v /etc/machine-id:/etc/machine-id:ro  -v /var/run/dbus:/var/run/dbus  -v ${PWD}:/mnt/workspace spacemacs/emacs25:develop'
