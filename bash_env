@@ -33,9 +33,3 @@ elif `type -p ag > /dev/null` ; then
 else
   export FZF_DEFAULT_COMMAND='find .'
 fi
-
-
-# Check if tmux is a thing and attach to it's session or create a new one
-if [ `type -p tmux` ];then
-  tmux attach || tmux new
-fi
