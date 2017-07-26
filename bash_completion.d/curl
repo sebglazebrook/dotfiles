@@ -1,0 +1,28 @@
+_curl_options() {
+  echo -e "--anyauth\n--append\n--basic\n--buffer\n--cacert\n--capath\n--cert\n--ciphers\n--compressed\n--config\n--connect\n--continue\n--cookie\n--create\n--crlf\n--crlfile\n--data\n--delegation\n--digest\n--disable\n--dns\n--dump\n--egd\n--engine\n--environment\n--eprt\n--epsv\n--expect100\n--fail\n--false\n--form\n--ftp\n--get\n--globoff\n--head\n--header\n--help\n--hostpubmd5\n--http1\n--http2\n--ignore\n--include\n--insecure\n--interface\n--ipv4\n--ipv6\n--junk\n--keepalive\n--key\n--krb\n--libcurl\n--limit\n--list\n--local\n--location\n--login\n--mail\n--manual\n--max\n--metalink\n--negotiate\n--netrc\n--next\n--no\n--noproxy\n--ntlm\n--oauth2\n--option\n--output\n--pass\n--path\n--pinnedpubkey\n--post301\n--post302\n--post303\n--progress\n--proto\n--proxy\n--proxy1\n--proxytunnel\n--pubkey\n--quote\n--random\n--range\n--raw\n--referer\n--remote\n--request\n--resolve\n--retry\n--sasl\n--service\n--sessionid\n--show\n--silent\n--socks\n--socks4\n--socks4a\n--socks5\n--speed\n--ssl\n--sslv2\n--sslv3\n--stderr\n--tcp\n--telnet\n--tftp\n--time\n--tlsauthtype\n--tlspass\n--tlspassword\n--tlsuser\n--tlsv1\n--tr\n--trace\n--unix\n--upload\n--url\n--use\n--user\n--verbose\n--version\n--write\n--xattr"
+}
+
+_curl_completion() {
+
+  local cur second_command
+
+  cur=${COMP_WORDS[COMP_CWORD]}
+  second_command=${COMP_WORDS[1]}
+
+  case ${second_command} in
+    -)
+      local results="$( _curl_options | fzf --height 20% --reverse )"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+    --)
+      local results="$( _curl_options | fzf --height 20% --reverse )"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+  esac
+
+
+
+}
+complete -o default -F _curl_completion curl
+
