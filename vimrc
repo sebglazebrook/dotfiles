@@ -12,6 +12,7 @@ set noswapfile " don't create swap files
 set smartcase  " case insensitive search
 set mouse=a "turn the mouse on
 set spell spelllang=en_us "Spell checking on
+set cryptmethod=blowfish2 "Use better encryption
 
 
 " turn off search highlight
