@@ -17,10 +17,6 @@ set completion-map-case on
 # Readline used by Bash 4.)
 set skip-completed-text on"
 
-set show-mode-in-prompt on
-set vi-ins-mode-string ""
-set vi-cmd-mode-string "!"
-
 $if Bash
 # Map Control-f to fzf's bash completion
 Control-f: " **\t"
