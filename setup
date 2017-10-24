@@ -16,14 +16,7 @@ if [ "$1" != "core" ]
 fi
 
 echo "Linking all dotfiles to home dir"
-find . -maxdepth 1 | sed "s/\.\///" | grep -v "^\." | grep -v "^setup$" | xargs -n 1 bash -c 'echo Linking file $1; ln -sf $0/.dotfiles/$1 ${0}/.$1' $HOME_DIR
-
-dirs_to_link=( bash_completion.d )
-for dir in "${dirs_to_link[@]}"
-do
-  echo "Linking directory $dir"
-  ln -sfn ${HOME_DIR}/.dotfiles/$dir ${HOME_DIR}/.$dir
-done
+find . -maxdepth 1 | sed "s/\.\///" | grep -v "^\." | grep -v "^setup$" | xargs -n 1 bash -c 'if [ ! -L ${0}/.$1 ]; then echo Linking file $1; ln -sf $0/.dotfiles/$1 ${0}/.$1; fi' $HOME_DIR
 
 cat ${HOME_DIR}/.bashrc | grep "bash_env" &> /dev/null
 if [ "$?" != 0 ]
