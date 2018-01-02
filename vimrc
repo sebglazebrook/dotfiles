@@ -24,6 +24,10 @@ noremap <Leader>fo v% :fold<CR>
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 nnoremap <leader>where op method(:render).source_location
 " nnoremap <leader>fp :!echo % | pbcopy<CR>
+"
+inoremap <expr> <C-l> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
 :cab f FZF
 :cab ff Rg
