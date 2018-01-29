@@ -33,3 +33,4 @@ elif `type -p ag > /dev/null` ; then
 else
   export FZF_DEFAULT_COMMAND='find .'
 fi
+export BLOCK_SIZE=human-readable
