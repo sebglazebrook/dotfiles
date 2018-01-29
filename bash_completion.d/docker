@@ -42,6 +42,11 @@ _docker_completion() {
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
+    stop)
+      local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
     logs)
       local results="$(docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}" | tail -n +2 | fzf --height 20% --reverse | awk '{ print $2 }')"
       printf '\e[5n';
@@ -53,6 +58,11 @@ _docker_completion() {
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     run)
+      local results="$(docker images | grep -v '<none>' | tail -n +2 | fzf --height 20% --reverse | tr -s ' ' | cut -d ' ' -f 1,2 | sed 's! !:!')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+    rmi)
       local results="$(docker images | grep -v '<none>' | tail -n +2 | fzf --height 20% --reverse | tr -s ' ' | cut -d ' ' -f 1,2 | sed 's! !:!')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
