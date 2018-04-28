@@ -14,6 +14,11 @@ _git_checkout()
         COMPREPLY=( $(compgen -W "${branches}" -- $cur ) )
       fi
       ;;
+    checkout)
+      local results="$(git branch | sed 's/^[\* ] //g' | fzf --height 40% --reverse)"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
     add)
       local results="$(git status --short | awk '{ print $2 }' | fzf --height 40% --reverse --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
       printf '\e[5n';
@@ -26,6 +31,11 @@ _git_checkout()
       ;;
     revert)
       local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1}' --preview-window=right:30%:wrap | awk '{ print $1 }')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+    stash)
+      local results="$(git stash list | fzf --height 40% --reverse --no-sort --preview 'echo {+1} | sed s/.$// | xargs git stash show -p | highlight -O ansi --syntax=diff' --preview-window=right:60%:wrap | awk '{ print $1 }' | sed s/.$// )"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
