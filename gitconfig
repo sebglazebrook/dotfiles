@@ -52,3 +52,6 @@ protocol = https
 [user]
 	name = Seb Glazebrook
 	email = sebastian.glazebrook@redbubble.com
+
+[commit]
+  template = ~/.git-commit-template
