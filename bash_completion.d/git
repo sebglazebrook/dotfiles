@@ -25,12 +25,12 @@ _git_checkout()
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     show)
-      local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1}' --preview-window=right:30%:wrap | awk '{ print $1 }')"
+      local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1} | highlight -O ansi --syntax=diff' --preview-window=right:60%:wrap | awk '{ print $1 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     revert)
-      local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1}' --preview-window=right:30%:wrap | awk '{ print $1 }')"
+      local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1} | highlight -O ansi --syntax=diff' --preview-window=right:60%:wrap | awk '{ print $1 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
