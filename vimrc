@@ -18,7 +18,7 @@ set cryptmethod=blowfish2 "Use better encryption
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-noremap <Leader>fu :Rg --case-sensitive "\W<C-R><C-W>\W" <CR>
+noremap <Leader>fu :Rg --case-sensitive -w "<C-R><C-W>" <CR>
 noremap <Leader>u :GundoToggle<CR>
 noremap <Leader>fo v% :fold<CR>
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
