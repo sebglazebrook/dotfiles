@@ -1,0 +1,29 @@
+_tmux_completion() {
+
+  local cur second_command
+
+  cur=${COMP_WORDS[COMP_CWORD]}
+  second_command=${COMP_WORDS[1]}
+
+  #if [ -z ${second_command} ]; then
+    #echo "hello world"
+  #fi
+
+  case ${second_command} in
+    attach-session)
+      local results="$(tmux ls | fzf --height 20% --reverse | awk '{ print $1 }' | sed 's!:$!!')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+    "")
+      local results="$(tmux list-commands | fzf --height 20% --reverse | awk '{ print $1 }')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+
+  esac
+
+
+
+}
+complete -o default -F _tmux_completion tmux
