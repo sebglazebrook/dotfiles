@@ -74,6 +74,7 @@ Plug 'bling/vim-airline'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'danro/rename.vim'
 Plug 'gilligan/vim-lldb'
+Plug 'derekwyatt/vim-scala'
 
 " Colorschemes
 Plug 'https://github.com/jpo/vim-railscasts-theme.git'
@@ -81,6 +82,7 @@ Plug 'https://github.com/morhetz/gruvbox'
 set background=dark
 
 "" Using git URL
+Plug 'https://github.com/leafgarland/typescript-vim.git'
 Plug 'https://github.com/mxw/vim-jsx.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/tpope/vim-endwise.git'
@@ -94,6 +96,8 @@ Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/djoshea/vim-autoread.git'
 Plug 'https://github.com/jremmen/vim-ripgrep.git'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 filetype plugin on " for nerd commenter plugin
 
 " Plugin options
@@ -135,3 +139,27 @@ let g:jsx_ext_required = 0  " Highlight .js as well as .jsx files
 let g:move_key_modifier = 'C'
 
 set tags=./tags,tags,.git/tags,rusty-tags.vi;$HOME
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
