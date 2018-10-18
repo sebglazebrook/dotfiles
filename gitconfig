@@ -55,3 +55,4 @@ protocol = https
 
 [commit]
   template = ~/.git-commit-template
+	verbose = true
