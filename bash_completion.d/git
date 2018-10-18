@@ -4,6 +4,7 @@ _git_checkout()
 
   cur=${COMP_WORDS[COMP_CWORD]}
   second_command=${COMP_WORDS[1]}
+  third_command=${COMP_WORDS[2]}
 
   case ${second_command} in
     co)
@@ -15,9 +16,15 @@ _git_checkout()
       fi
       ;;
     checkout)
-      local results="$(git branch | sed 's/^[\* ] //g' | fzf --height 40% --reverse)"
-      printf '\e[5n';
-      COMPREPLY=( $(compgen -W "${results}")  )
+      if [ "${third_command}" == '-b' ]; then
+        local results="$(git branch --remote | grep -v 'origin\/master$' | fzf --height 40% --reverse)"
+        printf '\e[5n';
+        COMPREPLY=( $(compgen -W "${results}")  )
+      else
+        local results="$(git branch | sed 's/^[\* ] //g' | fzf --height 40% --reverse)"
+        printf '\e[5n';
+        COMPREPLY=( $(compgen -W "${results}")  )
+      fi
       ;;
     add)
       local results="$(git status --short | awk '{ print $2 }' | fzf --height 40% --reverse --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
@@ -25,6 +32,11 @@ _git_checkout()
       COMPREPLY=( $(compgen -W "${results}")  )
       ;;
     show)
+      local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1} | highlight -O ansi --syntax=diff' --preview-window=right:60%:wrap | awk '{ print $1 }')"
+      printf '\e[5n';
+      COMPREPLY=( $(compgen -W "${results}")  )
+      ;;
+    reset)
       local results="$(git log --format='%h %s Author:%an Date: %ad'  --date=local | fzf --height 40% --reverse --no-sort --preview 'git show {+1} | highlight -O ansi --syntax=diff' --preview-window=right:60%:wrap | awk '{ print $1 }')"
       printf '\e[5n';
       COMPREPLY=( $(compgen -W "${results}")  )
