@@ -6,8 +6,3 @@
 tre() {
   tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
-
-
-lynx() {
-  docker run -ti sebglazebrook/lynx "$@"
-}
