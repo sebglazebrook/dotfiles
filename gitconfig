@@ -51,7 +51,7 @@ protocol = https
 	trustExitCode = true
 [user]
 	name = Seb Glazebrook
-	email = sebastian.glazebrook@redbubble.com
+	email = sebastianglazebrook@gmail.com
 
 [commit]
   template = ~/.git-commit-template

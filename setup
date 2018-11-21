@@ -30,12 +30,6 @@ if [ "$?" != 0 ]
     printf "\nif [ -f ${HOME_DIR}/.functions ]; then\n  . ${HOME_DIR}/.functions\nfi\n" >> ${HOME_DIR}/.bashrc
 fi
 
-cat ${HOME_DIR}/.bashrc | grep "redbubble" &> /dev/null
-if [ "$?" != 0 ]
-  then
-    printf "\nif [ -f ${HOME_DIR}/.redbubble ]; then\n  . ${HOME_DIR}/.redbubble\nfi\n" >> ${HOME_DIR}/.bashrc
-fi
-
 cat ${HOME_DIR}/.bashrc | grep bash_aliases &> /dev/null
 if [ "$?" != 0 ]
   then
