@@ -22,3 +22,6 @@ $if Bash
 Control-f: " **\t"
 Control-g: " $(fzf --height 40% --preview 'highlight -O ansi -l {} 2> /dev/null || cat {}')"
 $endif
+
+# To redraw line after things like fzf closes and they do a `printf '\e[5n'`
+"\e[0n": redraw-current-line
